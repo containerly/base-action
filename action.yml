@@ -1,5 +1,5 @@
-name: '<Action Name>'
-description: '<One-line description of what this action does>'
+name: 'ShellCheck'
+description: 'Run ShellCheck static analysis on shell scripts'
 author: 'containerly'
 
 branding:
@@ -7,21 +7,33 @@ branding:
   color: 'green'
 
 inputs:
-  command:
-    description: 'Command to run'
+  files:
+    description: 'Space-separated list of shell script files to check'
+    required: true
+  severity:
+    description: 'Minimum severity to report: error, warning, info, style'
     required: false
-    default: '<default-command>'
-
-  # TODO: add command-specific inputs here
-
+    default: 'warning'
+  format:
+    description: 'Output format: tty, checkstyle, diff, gcc, json, json1, quiet'
+    required: false
+    default: 'tty'
+  shell:
+    description: 'Override shell dialect: sh, bash, dash, ksh'
+    required: false
+    default: ''
+  exclude:
+    description: 'Comma-separated check codes to exclude (e.g. SC2034,SC2086)'
+    required: false
+    default: ''
   args:
-    description: 'Additional raw arguments appended to the CLI command'
+    description: 'Additional raw arguments appended to the shellcheck command'
     required: false
     default: ''
 
 outputs:
   exit-code:
-    description: 'Exit code returned by the CLI'
+    description: 'Exit code returned by shellcheck'
 
 runs:
   using: 'docker'

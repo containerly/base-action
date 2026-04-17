@@ -1,5 +1,5 @@
-# TODO: replace with the base image that ships the CLI you're wrapping
-FROM <org>/<cli-image>:<version>
+FROM alpine:3.19
+RUN apk add --no-cache bash shellcheck
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
