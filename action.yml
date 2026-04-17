@@ -1,0 +1,28 @@
+name: '<Action Name>'
+description: '<One-line description of what this action does>'
+author: 'containerly'
+
+branding:
+  icon: 'check-circle'
+  color: 'green'
+
+inputs:
+  command:
+    description: 'Command to run'
+    required: false
+    default: '<default-command>'
+
+  # TODO: add command-specific inputs here
+
+  args:
+    description: 'Additional raw arguments appended to the CLI command'
+    required: false
+    default: ''
+
+outputs:
+  exit-code:
+    description: 'Exit code returned by the CLI'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
