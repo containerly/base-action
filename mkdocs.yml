@@ -1,0 +1,35 @@
+site_name: ShellCheck Action
+site_description: Run ShellCheck static analysis on shell scripts in GitHub Actions
+site_url: https://containerly.github.io/base-action
+repo_url: https://github.com/containerly/base-action
+repo_name: containerly/base-action
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: green
+      accent: green
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: green
+      accent: green
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - content.code.copy
+    - navigation.sections
+
+nav:
+  - Home: index.md
+  - Inputs & Outputs: reference.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
